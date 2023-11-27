@@ -66,7 +66,7 @@ public abstract class EncodingAlgorithm {
         }
         Matrix temp = Matrix.merge(spikes);
         temp = temp.operation('!', 0.0);
-        return new Double(new DecimalFormat("#,###,###,##0.00").format(temp.sum() / temp.numel()));
+        return Double.parseDouble(new DecimalFormat("#,###,###,##0.00").format(temp.sum() / temp.numel()));
     }
 
     /**

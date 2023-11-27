@@ -125,7 +125,7 @@ public abstract class CrossValidation {
     /**
      * Creates a confusion matrix using a validation matrix previously created
      * after running the validation process while running an experiment
-     * {@link jneucube.cube.NeuCubeController#runExperiment(ArrayList, ArrayList)}.
+     * {@link nz.ac.aut.cube.NeuCubeController#runExperiment(ArrayList, ArrayList)}.
      *
      * @param validationMatrix the validation matrix which columns indicate the
      * id, the actual class, the predicted class, and classification status (0)

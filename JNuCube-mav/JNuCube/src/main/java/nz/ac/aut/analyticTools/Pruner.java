@@ -34,9 +34,9 @@ public class Pruner {
      * in a production environment. The function executes the following steps: 1
      * Creates a new project. 2 Loads the NeuCube model that will be pruned. 3
      * Prune the spiking neurla network (reservoir). Set the variable
-     * {@link jneucube.cube.NeuCubeController#setRecordFiringActivity(boolean)}
+     * {@link nz.ac.aut.cube.NeuCubeController#setRecordFiringActivity(boolean)}
      * to true. Calls the
-     * {@link jneucube.cube.NeuCubeController#pruneInactiveNeurons()} function.
+     * {@link nz.ac.aut.cube.NeuCubeController#pruneInactiveNeurons()} function.
      * 4 Saves relevant information for further analysis i.e. the firing
      * activity (NeuCube_Prunned_Firing_Activity.csv), saves the matrix of
      * synaptic weights (NeuCube_Prunned_Weight_Matrix.csv), saves the list of
@@ -81,9 +81,9 @@ public class Pruner {
      * train is set to true then the function fits the model with the selected
      * samples. 7 Prunes the SNN by propagating the spike trains of the selected
      * samples. Sets the variable
-     * {@link jneucube.cube.NeuCubeController#setRecordFiringActivity(boolean)}
+     * {@link nz.ac.aut.cube.NeuCubeController#setRecordFiringActivity(boolean)}
      * to true. Then, it calls the
-     * {@link jneucube.cube.NeuCubeController#pruneInactiveNeurons(double)}
+     * {@link nz.ac.aut.cube.NeuCubeController#pruneInactiveNeurons(double)}
      * function. 8 Saves relevant information for further analysis i.e. the
      * firing activity
      * (NeuCube_Pruned_Firing_Activity_Classes_[strClasses]_Features_[strFeatrues].csv),
@@ -134,7 +134,7 @@ public class Pruner {
         // 3 Select the samples that correspond to the specified classes
         ArrayList<DataSample> dataset = new ArrayList<>();
         for (int i = 0; i < classList.size(); i++) {
-            dataset.addAll(project.getDataController().getDataClasses().get(new Double(classList.get(i))));
+            dataset.addAll(project.getDataController().getDataClasses().get(Double.parseDouble(String.valueOf(classList.get(i)))));
         }
 
         // 4 Encode the data
@@ -195,9 +195,9 @@ public class Pruner {
      * specified features. 6 If the parameter train is set to true then the
      * function fits the model with the selected samples. 7 Prunes the SNN by
      * propagating the spike trains of the selected samples. Sets the variable
-     * {@link jneucube.cube.NeuCubeController#setRecordFiringActivity(boolean)}
+     * {@link nz.ac.aut.cube.NeuCubeController#setRecordFiringActivity(boolean)}
      * to true. Then, it calls the
-     * {@link jneucube.cube.NeuCubeController#pruneInactiveNeurons(double)}
+     * {@link nz.ac.aut.cube.NeuCubeController#pruneInactiveNeurons(double)}
      * function. 8 Saves relevant information for further analysis i.e. the
      * firing activity
      * (NeuCube_Pruned_Firing_Activity_Samples_[strSamples]_Features_[strFeatrues].csv),
